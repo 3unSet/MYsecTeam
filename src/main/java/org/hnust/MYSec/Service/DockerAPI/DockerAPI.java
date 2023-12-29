@@ -12,5 +12,19 @@ public class DockerAPI {
     private String port;
     private RemoteHost remoteHost;
 
+    //读取docker-compose文件
+    public Object readConfig(String fileDir){
+
+        return null;
+
+    }
+
+
+
+    //获取docker-compose配置中的services名字
+    public String getServiceName(){
+        return null;
+    }
+
 }
 

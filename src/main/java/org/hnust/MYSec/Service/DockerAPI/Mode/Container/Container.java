@@ -1,6 +1,7 @@
-package org.hnust.MYSec.Service.DockerAPI.Mode;
+package org.hnust.MYSec.Service.DockerAPI.Mode.Container;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 
@@ -29,7 +30,7 @@ public class Container implements Serializable {
     private String status;
     private List<Mount> mounts;
     private List<Port> ports;
-    private Map<String, String> labels;
+    private Label labels;
     private String image;
     private long created;
     private List<String> names;
@@ -132,3 +133,4 @@ class HostConfig {
      */
     private String networkMode;
 }
+

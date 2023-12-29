@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Http {
+    //发起hhtp get请求
     public static String doGet(String httpUrl){
         //链接
         HttpURLConnection connection = null;
@@ -53,13 +54,12 @@ public class Http {
                     e.printStackTrace();
                 }
             }
-            //关闭远程连接
             connection.disconnect();
         }
         return result.toString();
     }
 
-
+    //发起http post请求
     public static String doPost(String httpUrl, @Nullable String param) {
         StringBuffer result = new StringBuffer();
         //连接
@@ -68,9 +68,7 @@ public class Http {
         InputStream is = null;
         BufferedReader br = null;
         try {
-            //创建连接对象
             URL url = new URL(httpUrl);
-            //创建连接
             connection = (HttpURLConnection) url.openConnection();
             //设置请求方法
             connection.setRequestMethod("POST");
@@ -78,7 +76,6 @@ public class Http {
             connection.setConnectTimeout(15000);
             //设置读取超时时间
             connection.setReadTimeout(15000);
-            //DoOutput设置是否向httpUrlConnection输出，DoInput设置是否从httpUrlConnection读入，此外发送post请求必须设置这两个
             //设置是否可读取
             connection.setDoOutput(true);
             connection.setDoInput(true);
@@ -87,7 +84,6 @@ public class Http {
             connection.setRequestProperty("connection", "Keep-Alive");
             connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
             connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
-
             //拼装参数
             if (null != param && param.equals("")) {
                 //设置参数
@@ -95,11 +91,6 @@ public class Http {
                 //拼装参数
                 os.write(param.getBytes("UTF-8"));
             }
-            //设置权限
-            //设置请求头等
-            //开启连接
-            //connection.connect();
-            //读取响应
             if (connection.getResponseCode() == 200) {
                 is = connection.getInputStream();
                 if (null != is) {
@@ -117,7 +108,6 @@ public class Http {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            //关闭连接
             if(br!=null){
                 try {
                     br.close();
@@ -139,7 +129,6 @@ public class Http {
                     e.printStackTrace();
                 }
             }
-            //关闭连接
             connection.disconnect();
         }
         return result.toString();

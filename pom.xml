@@ -52,6 +52,11 @@
             <artifactId>jsch</artifactId>
             <version>0.1.55</version> <!-- 请检查最新版本 -->
         </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.33</version> <!-- 使用最新版本 -->
+        </dependency>
 
 
     </dependencies>
