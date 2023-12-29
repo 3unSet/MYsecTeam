@@ -2,6 +2,7 @@ package org.hnust.MYSec.Service.DockerAPI;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hnust.MYSec.Service.DockerAPI.Mode.RemoteHost;
 
 @Data
 @NoArgsConstructor

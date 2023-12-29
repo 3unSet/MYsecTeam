@@ -11,10 +11,13 @@ public class Student {
     private String realName;
     //年级
     private int age;
+
     //学院
     private String department;
     //专业
     private String major;
     //方向
     private String[] direction;
+
+
 }

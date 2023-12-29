@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
+import org.hnust.MYSec.Service.DockerAPI.Mode.Container;
+import org.hnust.MYSec.Service.DockerAPI.Mode.RemoteHost;
 import org.hnust.MYSec.Utils.Http;
 
 import java.io.BufferedReader;
@@ -14,10 +16,10 @@ import java.util.List;
 public class ContainerAPI {
 
     //获取所有容器
-    public static List getAllContainer(String host){
-        List containers=null;
+    public static List<Container> getAllContainer(String host){
+        List<Container> containers=null;
         String url=host+"/containers/json";
-        containers= (List)JSON.parse(Http.doGet(url));
+        containers=JSON.parseArray(Http.doGet(url),Container.class);
         return containers;
     }
 
@@ -58,7 +60,7 @@ public class ContainerAPI {
      * @param remoteComposeDirectory docker-compose.yaml所在的目录
 
      */
-    public static void  RemoteStartContainer(RemoteHost remoteHost,String remoteComposeDirectory){
+    public static void  RemoteStartContainer(RemoteHost remoteHost, String remoteComposeDirectory){
 
             try {
                 // 使用 JSch 创建 SSH 会话
