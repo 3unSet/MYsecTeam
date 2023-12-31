@@ -12,9 +12,9 @@ public class test {
         //String host="http://101.35.221.221:2375";
         //ContainerAPI.RemoteStartContainer(new RemoteHost(),"/var/www/html/vulhub/flask/ssti");
         //ContainerAPI.RemoteStopContainer(new RemoteHost(),"/var/www/html/vulhub/flask/ssti");
-        List a= ContainerAPI.getAllContainer(host);
+        //List a= ContainerAPI.getAllContainer(host);
       // Container container= JSON.parseObject(String.valueOf(a.get(0)),Container.class);
-        DockerManger dockerManger = new DockerManger();
+       // DockerManger dockerManger = new DockerManger();
         //dockerManger.addContainer();
 
         //Map usermap=dockerManger.getUserDockerMap();

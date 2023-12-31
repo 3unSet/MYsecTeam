@@ -6,6 +6,8 @@ import org.hnust.MYSec.Mode.Base.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 
 @Data
 @NoArgsConstructor
@@ -25,4 +27,18 @@ public class CTFUser {
     //是否为管理员
     private boolean isManager;
 
+
+    // 重写hashCode和equals方法,
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        CTFUser ctfUser = (CTFUser) obj;
+        return Objects.equals(username, ctfUser.username);
+    }
 }

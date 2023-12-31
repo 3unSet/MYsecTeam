@@ -1,9 +1,6 @@
 package org.hnust.MYSec.Service.DockerAPI.Mode.Container;
 
-
-import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
-
 
 import java.io.Serializable;
 import java.util.List;
@@ -40,6 +37,11 @@ public class Container implements Serializable {
     private String imageID;
     private HostConfig hostConfig;
     private String id;
+
+//    public String getId(){
+//       // String realId = id.substring(0, 12);
+//        return Id;
+//    }
 }
 
 /**

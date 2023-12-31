@@ -5,7 +5,7 @@ import com.jcraft.jsch.Session;
 import org.hnust.MYSec.Mode.CTFUser;
 import org.hnust.MYSec.Service.DockerAPI.ContainerAPI;
 import org.hnust.MYSec.Service.DockerAPI.DockerManger;
-import org.hnust.MYSec.Service.DockerAPI.Mode.RemoteHost;
+import org.hnust.MYSec.Configure.RemoteHost;
 
 public class functionTest {
 
@@ -30,10 +30,10 @@ public class functionTest {
 	}
 
 	public  static void test2(){
-		DockerManger dockerManger=new DockerManger();
+	//	DockerManger dockerManger=new DockerManger();
 		CTFUser use=new CTFUser();
-		use.setUsername("yyjy");
-		dockerManger.addContainer(use,"/var/www/html/vulhub/flask/ssti");
+		use.setUsername("yyjcycc");
+		//dockerManger.addContainer(use,"/var/www/html/vulhub/flask/ssti");
 		System.out.println();
 	}
 }

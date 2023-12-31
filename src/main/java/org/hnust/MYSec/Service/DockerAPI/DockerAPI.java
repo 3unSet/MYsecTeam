@@ -2,13 +2,13 @@ package org.hnust.MYSec.Service.DockerAPI;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hnust.MYSec.Service.DockerAPI.Mode.RemoteHost;
+import org.hnust.MYSec.Configure.RemoteHost;
 
 @Data
 @NoArgsConstructor
 public class DockerAPI {
 
-    private String url="http://192.168.120.128:2375";
+    private String url;
     private String port;
     private RemoteHost remoteHost;
 
@@ -18,7 +18,6 @@ public class DockerAPI {
         return null;
 
     }
-
 
 
     //获取docker-compose配置中的services名字
